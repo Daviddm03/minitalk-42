@@ -22,3 +22,5 @@ In summary, Minitalk is designed to help students understand the fundamentals of
 <h3>How to run</h3>
 
 1 - **Clone**
+```bash```
+git@github.com:Daviddm03/minitalk-42.git
