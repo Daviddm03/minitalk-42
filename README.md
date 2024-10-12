@@ -23,21 +23,21 @@ In summary, Minitalk is designed to help students understand the fundamentals of
 
 1 - **Clone**
 ```bash
-git@github.com:Daviddm03/minitalk-42.git
+$ git@github.com:Daviddm03/minitalk-42.git
 ```
 
 2 - **Compile the program**
 ```bash
-make
+$ make
 ```
 
 3 - **Run server**
 ```bash
-./server
+$ ./server
 ```
 
 4 - **Run client "At this point, you must use the PID that was displayed on the server and send a string."**
 ```bash
-./client <PID> "send a string"
+$ ./client <PID> "send a string"
 ```
 
