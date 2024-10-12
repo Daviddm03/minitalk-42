@@ -1,4 +1,4 @@
-# minitalk-42 🖥
+# Minitalk-42 🖥
 <h3>What is Minitalk ⁉️</h3>
 The Minitalk project at 42 is a practical coding challenge that introduces students to inter-process communication (IPC) in Unix-based systems, specifically using signals. The objective is to create a simple messaging system with a client-server architecture where the client program can send a string message to the server program, and the server receives and displays it. This project enhances understanding of low-level system calls, signal handling, and process communication.
 
