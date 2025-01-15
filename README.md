@@ -26,17 +26,22 @@ In summary, Minitalk is designed to help students understand the fundamentals of
 $ git clone https://github.com/Daviddm03/minitalk-42.git
 ```
 
-2 - **Compile the program**
+2 - **Navigate to the directory**
+```bash
+$ cd minitalk-42
+```
+
+3 - **Compile the program**
 ```bash
 $ make
 ```
 
-3 - **Run server**
+4 - **Run server**
 ```bash
 $ ./server
 ```
 
-4 - **Run client "At this point, you must use the PID that was displayed on the server and send a string."**
+5 - **Run client "At this point, you must use the PID that was displayed on the server and send a string."**
 ```bash
 $ ./client <PID> "send a string"
 ```
