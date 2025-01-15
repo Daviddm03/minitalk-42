@@ -23,7 +23,7 @@ In summary, Minitalk is designed to help students understand the fundamentals of
 
 1 - **Clone**
 ```bash
-$ git@github.com:Daviddm03/minitalk-42.git
+$ git clone https://github.com/Daviddm03/minitalk-42.git
 ```
 
 2 - **Compile the program**
