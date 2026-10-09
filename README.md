@@ -1,48 +1,91 @@
-# Minitalk-42 🖥
-<h3>What is Minitalk ⁉️</h3>
-The Minitalk project at 42 is a practical coding challenge that introduces students to inter-process communication (IPC) in Unix-based systems, specifically using signals. The objective is to create a simple messaging system with a client-server architecture where the client program can send a string message to the server program, and the server receives and displays it. This project enhances understanding of low-level system calls, signal handling, and process communication.
+# minitalk
 
-<h3>Key points 🔑</h3>
+A small client-server communication program written in C using UNIX signals.
 
-**Signal Handling**
-- Understanding how signals work, how to send them, and how to write handlers that properly interpret these signals.
+The project was developed as part of the 42 curriculum to explore inter-process communication without using sockets, pipes, or shared files.
 
-**Bitwise Manipulation**
-- Since the message is sent bit by bit, you’ll work with bitwise operations to encode and decode characters.
+## How It Works
 
-**Process Communication**
-- A deeper look at how processes can communicate with each other, an essential concept in Unix and Linux programming.
+The project contains two programs:
 
-**System Calls** 
-- Familiarizing yourself with system calls like kill() to send signals and signal() or sigaction() to handle incoming signals in the server.
+- `server` — receives and reconstructs messages
+- `client` — converts a message into bits and sends them to the server
 
-<h3>Conclusion ✅</h3>
-In summary, Minitalk is designed to help students understand the fundamentals of signal-based communication between processes, an essential building block for more complex systems programming tasks. It builds proficiency in working with low-level operations, teaches the basics of client-server models, and provides hands-on experience with signal handling in C.
+Communication happens using only:
 
-<h3>How to run</h3>
-
-1 - **Clone**
-```bash
-$ git clone https://github.com/Daviddm03/minitalk-42.git
+```text
+SIGUSR1
+SIGUSR2
 ```
 
-2 - **Navigate to the directory**
+Each character is sent bit by bit. The server reconstructs the characters from the received signals and prints the completed message.
+
+## Getting Started
+
+### Requirements
+
+- GCC or Clang
+- Make
+- A Unix-like environment
+
+Clone the repository:
+
 ```bash
-$ cd minitalk-42
+git clone git@github.com:Daviddm03/minitalk-42.git
+cd minitalk-42/minitalk
 ```
 
-3 - **Compile the program**
+Compile:
+
 ```bash
-$ make
+make
 ```
 
-4 - **Run server**
-```bash
-$ ./server
+This creates:
+
+```text
+server
+client
 ```
 
-5 - **Run client "At this point, you must use the PID that was displayed on the server and send a string."**
+## Usage
+
+Start the server:
+
 ```bash
-$ ./client <PID> "send a string"
+./server
 ```
 
+The server prints its process ID:
+
+```text
+PID -> 12345
+```
+
+Open another terminal and send a message using that PID:
+
+```bash
+./client 12345 "Hello from minitalk"
+```
+
+The message is reconstructed and printed by the server.
+
+Clean or rebuild the project with:
+
+```bash
+make clean
+make fclean
+make re
+```
+
+## What I Learned
+
+minitalk introduced me to UNIX signals and inter-process communication.
+
+The most interesting part was representing characters as individual bits, transmitting those bits using signals, and reconstructing the original message on another process.
+
+It also helped me understand process IDs and signal handlers in practice.
+
+## Tech
+
+C · UNIX Signals · Processes · Bitwise Operations · Makefile
